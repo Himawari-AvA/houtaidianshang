@@ -2,7 +2,7 @@
  * @Author: Himawari 867415074@qq.com
  * @Date: 2022-07-23 17:42:32
  * @LastEditors: Himawari 867415074@qq.com
- * @LastEditTime: 2022-07-24 00:22:23
+ * @LastEditTime: 2022-07-24 13:40:20
  * @FilePath: \houtaidianshang\src\api\product\tradeMark.js
  * @Description:
  *
@@ -24,3 +24,6 @@ export const reqAddOrUpdateTradeMark = (tradeMark) => {
     return request({ url: `/admin/product/baseTrademark/save`, method: 'post', data: tradeMark });
   }
 };
+
+// 删除品牌接口
+export const reqDeleteTradeMark = (id) => request({ url: `/admin/product/baseTrademark/remove/${id}`, method: 'delete' });

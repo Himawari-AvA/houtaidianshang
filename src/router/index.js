@@ -2,7 +2,7 @@
  * @Author: Himawari 867415074@qq.com
  * @Date: 2022-07-23 13:29:43
  * @LastEditors: Himawari 867415074@qq.com
- * @LastEditTime: 2022-07-23 16:54:18
+ * @LastEditTime: 2022-07-24 13:55:17
  * @FilePath: \houtaidianshang\src\router\index.js
  * @Description:
  *
@@ -18,13 +18,13 @@
  *
  * Copyright (c) 2022 by Himawari 867415074@qq.com, All Rights Reserved.
  */
-import Vue from "vue";
-import Router from "vue-router";
+import Vue from 'vue';
+import Router from 'vue-router';
 
 Vue.use(Router);
 
 /* Layout */
-import Layout from "@/layout";
+import Layout from '@/layout';
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -52,65 +52,65 @@ import Layout from "@/layout";
  */
 export const constantRoutes = [
   {
-    path: "/login",
-    component: () => import("@/views/login/index"),
+    path: '/login',
+    component: () => import('@/views/login/index'),
     hidden: true,
   },
 
   {
-    path: "/404",
-    component: () => import("@/views/404"),
+    path: '/404',
+    component: () => import('@/views/404'),
     hidden: true,
   },
 
   {
-    path: "/",
+    path: '/',
     component: Layout,
-    redirect: "/dashboard",
+    redirect: '/dashboard',
     children: [
       {
-        path: "dashboard",
-        name: "Dashboard",
-        component: () => import("@/views/dashboard/index"),
-        meta: { title: "首页", icon: "dashboard" },
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard/index'),
+        meta: { title: '首页', icon: 'dashboard' },
       },
     ],
   },
 
   {
-    path: "/product",
+    path: '/product',
     component: Layout,
-    name: "Product",
-    meta: { title: "商品管理", icon: "el-icon-goods" },
+    name: 'Product',
+    meta: { title: '商品管理', icon: 'el-icon-goods' },
     children: [
       {
-        path: "trademark",
-        name: "TradeMark",
-        component: () => import("@/views/product/tradeMark"),
-        meta: { title: "品牌管理" },
+        path: 'trademark',
+        name: 'TradeMark',
+        component: () => import('@/views/product/tradeMark'),
+        meta: { title: '品牌管理' },
       },
       {
-        path: "attr",
-        name: "Attr",
-        component: () => import("@/views/product/Attr"),
-        meta: { title: "平台属性管理" },
+        path: 'attr',
+        name: 'Attr',
+        component: () => import('@/views/product/Attr'),
+        meta: { title: '平台属性管理' },
       },
       {
-        path: "spu",
-        name: "Spu",
-        component: () => import("@/views/product/Spu"),
-        meta: { title: "Spu管理" },
+        path: 'spu',
+        name: 'Spu',
+        component: () => import('@/views/product/Spu'),
+        meta: { title: 'Spu管理' },
       },
       {
-        path: "sku",
-        name: "Sku",
-        component: () => import("@/views/product/Sku"),
-        meta: { title: "Sku管理" },
+        path: 'sku',
+        name: 'Sku',
+        component: () => import('@/views/product/Sku'),
+        meta: { title: 'Sku管理' },
       },
     ],
   },
   // 404 page must be placed at the end !!!
-  { path: "*", redirect: "/404", hidden: true },
+  { path: '*', redirect: '/404', hidden: true },
 ];
 
 const createRouter = () =>

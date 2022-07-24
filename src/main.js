@@ -2,7 +2,7 @@
  * @Author: Himawari 867415074@qq.com
  * @Date: 2022-07-23 13:29:43
  * @LastEditors: Himawari 867415074@qq.com
- * @LastEditTime: 2022-07-23 23:09:52
+ * @LastEditTime: 2022-07-24 20:39:45
  * @FilePath: \houtaidianshang\src\main.js
  * @Description:
  *
@@ -49,8 +49,12 @@ Vue.config.productionTip = false;
 // 组件实例的原型的原型指向Vue.prototype
 // 将API相关接口给任意组件使用
 import API from '@/api';
+import CategorySelect from '@/components/CategorySelect';
+import HintButton from '@/components/HintButton';
 Vue.prototype.$API = API;
 
+Vue.component(CategorySelect.name, CategorySelect);
+Vue.component(HintButton.name, HintButton);
 new Vue({
   el: '#app',
   router,
